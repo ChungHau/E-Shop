@@ -1,6 +1,5 @@
-const { default: mongoose } = require("mongoose");
-
-const connectDatabse = () => {
+import mongoose from "mongoose";
+export const connectDatabase = () => {
   mongoose
     .connect(process.env.DB_URL, {
       useNewUrlParser: true,
@@ -10,5 +9,3 @@ const connectDatabse = () => {
       console.log(`mongodb connected with server: ${data.connection.host}`);
     });
 };
-
-module.exports = connectDatabse;
